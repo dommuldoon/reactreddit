@@ -1,26 +1,26 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
+import Header from './layout/header';
+import Footer from './layout/footer';
+import Home from './components/home';
+import Subreddit from './components/subreddit';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<>
+			<Header />
+			<main className="container">
+				<Switch>
+					<Route path="/home" component={Home} />
+					<Route path="/subreddit/:id" component={Subreddit} />
+					<Redirect from="/" exact to="/home" />
+				</Switch>
+			</main>
+			<Footer />
+		</>
+	);
 }
 
 export default App;

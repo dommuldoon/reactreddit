@@ -1,5 +1,10 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+This project uses React/Typscript/Redux/Saga.
+The user is presented with an autocomplete/search from where they can select a subbreddit wherein they can then view the posts and page through them.
+
+In keeping with the current React trend it uses on functional components (no class compnents) and hooks.
+
 ## Available Scripts
 
 In the project directory, you can run:
